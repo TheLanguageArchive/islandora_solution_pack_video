@@ -128,6 +128,13 @@ function islandora_video_admin(array $form, array &$form_state) {
       ),
     ),
   );
+  // PEAKS derivatives.
+  $form['derivatives']['islandora_video_make_peaks_locally'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Create Peaks datastream locally'),
+    '#description' => t('Generate a peaks file for audio waveform display (not yet implemented).'),
+    '#default_value' => variable_get('islandora_video_make_archive', FALSE),
+  );
 
   return system_settings_form($form);
 }

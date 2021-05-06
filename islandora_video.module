@@ -182,6 +182,17 @@ function islandora_video_islandora_sp_videocmodel_islandora_derivative() {
       'file' => drupal_get_path('module', 'islandora_video') . '/includes/derivatives.inc',
     );
   }
+  if (variable_get('islandora_video_make_peaks_locally', TRUE)) {
+    $derivatives[] = array(
+      'source_dsid' => NULL,
+      'destination_dsid' => 'PEAKS',
+      'weight' => 1,
+      'function' => array(
+        'islandora_video_create_peaks',
+      ),
+      'file' => drupal_get_path('module', 'islandora_video') . '/includes/derivatives.inc',
+    );
+  }
   return $derivatives;
 }
 

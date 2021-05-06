@@ -52,6 +52,13 @@ function template_preprocess_islandora_video(array &$variables) {
 
   $mime = 'video/mp4';
 
+  if (isset($object['PEAKS'])) {
+    $peaks_url = url("islandora/object/{$object->id}/datastream/PEAKS", array('absolute' => TRUE));
+	}
+  else {
+	  $peaks_url = null;
+  }
+
   $video_params = array(
     'pid' => $object->id,
   );
@@ -61,6 +68,7 @@ function template_preprocess_islandora_video(array &$variables) {
     $video_params += array(
       'mime' => $mime,
       'url' => $video_url,
+      'peaks' => $peaks_url,
     );
   }
   // Thumbnail.

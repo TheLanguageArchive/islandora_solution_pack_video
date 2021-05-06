@@ -24,21 +24,24 @@
   <dsTypeModel ID="TECHMD">
     <form MIME="application/xml"/>
   </dsTypeModel>
-  <dsTypeModel ID="TN" optional="false">
+  <dsTypeModel ID="TN" optional="true">
     <form MIME="image/jpeg"/>
     <form MIME="image/png"/>
     <form MIME="image/gif"/>
   </dsTypeModel>
-  <dsTypeModel ID="OGG" optional="false">
+  <dsTypeModel ID="OGG" optional="true">
     <form MIME="video/ogg"/>
   </dsTypeModel>
-  <dsTypeModel ID="MKV" optional="false">
+  <dsTypeModel ID="MKV" optional="true">
     <form MIME="video/x-matroska"/>
   </dsTypeModel>
-  <dsTypeModel ID="TECHMD_FITS" optional="false">
+  <dsTypeModel ID="TECHMD_FITS" optional="true">
     <form MIME="application/xml"/>
   </dsTypeModel>
-  <dsTypeModel ID="MP4" optional="false">
+  <dsTypeModel ID="MP4" optional="true">
     <form MIME="video/mp4"/>
+  </dsTypeModel>
+  <dsTypeModel ID="PEAKS" optional="true">
+    <form MIME="application/json"/>
   </dsTypeModel>
 </dsCompositeModel>

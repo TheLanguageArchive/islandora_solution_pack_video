@@ -145,6 +145,27 @@ function islandora_video_create_mkv(AbstractObject $object, $force = FALSE) {
 }
 
 /**
+ * Creates the PEAKS derivative from the given video file.
+ *
+ * @param AbstractObject $object
+ *   An AbstractObject representing an object in Fedora.
+ * @param bool $force
+ *   Whether the derivative generation is being forced.
+ *
+ * @return array
+ *   An array describing the outcome of the PEAKS creation.
+ *
+ * @see hook_islandora_derivative()
+ */
+function islandora_video_create_peaks(AbstractObject $object, $force = FALSE) {
+  // placeholder function, not yet implemented. Needs to generate peaks file in json format using
+  // "audiowaveform": https://github.com/bbc/audiowaveform
+  // see https://wavesurfer-js.org/faq/
+  // probably needs to be a 2-step process, first extracting the audio and then generating the peaks
+  return;
+}
+
+/**
  * Create the thumbnail for the given file.
  *
  * @param AbstractObject $object
