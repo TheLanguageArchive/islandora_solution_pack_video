@@ -9,6 +9,7 @@
  * Implements template_preprocess_HOOK().
  */
 function template_preprocess_islandora_video(array &$variables) {
+  global $base_url;
   module_load_include('inc', 'islandora', 'includes/datastream');
   module_load_include('inc', 'islandora', 'includes/utilities');
   module_load_include('inc', 'islandora', 'includes/solution_packs');
@@ -64,7 +65,9 @@ function template_preprocess_islandora_video(array &$variables) {
   );
   // Video player.
   if (isset($object[$viewer_dsid]) && islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $object[$viewer_dsid])) {
-    $video_url = url("islandora/object/{$object->id}/datastream/$viewer_dsid/view");
+    //$video_url = url("islandora/object/{$object->id}/datastream/$viewer_dsid/view");
+    $appToken  = base64_encode($base_url . '/flat_auth|apptoken|' . flat_auth_get_token());
+    $video_url = url("vod/{$object->id}/{$viewer_dsid}/{$appToken},.urlset/master.m3u8");
     $video_params += array(
       'mime' => $mime,
       'url' => $video_url,
